@@ -168,6 +168,6 @@ div.poster > img {
   gap: 0.4rem;
   color: var(--cores-cinza-light, #8B8D9B);
   font-size: 1.2rem;
-  line-height: 2rem; /* 166.667% */
+  line-height: 2rem;
 
 }
