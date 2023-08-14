@@ -18,9 +18,9 @@
 
 ### 🔖 Layout
 
-- Projeto disponível no 🔗 [Deploy](https://nlwsportsreactjs.netlify.app)
+- Projeto disponível no 🔗 [Deploy](https://movieia.netlify.app/)
 
-- Figma do projeto disponível no 🔗 [Figma](https://www.figma.com/file/dUlDOXSsSd3kTECFxZaBN1/NLW-eSports---Desafio-Extra-(Copy)?node-id=6%3A131&t=vp76gtgW5fPstpcG-0)
+- Figma do projeto disponível no 🔗 [Figma]([https://www.figma.com/file/dUlDOXSsSd3kTECFxZaBN1/NLW-eSports---Desafio-Extra-(Copy)?node-id=6%3A131&t=vp76gtgW5fPstpcG-0](https://www.figma.com/file/HUkHyBrIUmIWWtmuU2Zmyh/Recomenda%C3%A7%C3%A3o-de-Filme-com-IA-%E2%80%A2-Desafio-30-(Community)?node-id=3%3A376&mode=dev))
 
 
 ![image](https://github.com/luizgmachado/MovieIA/assets/108701750/221aa7b7-c33a-4aff-a54b-f4ef233c16d3)
