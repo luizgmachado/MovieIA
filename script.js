@@ -440,7 +440,9 @@ async function getMoreInfo(id) {
 // quando clicar no botão de Assistir trailer
 // https://api.themoviedb.org/3/movie/{movie_id}/videos
 
-function watch(e) { }
+function watch(e) { 
+  
+}
 
 function createMovieLayout({
   id,
@@ -453,8 +455,8 @@ function createMovieLayout({
 
   return `
      <div class="movie">
-          <div class="${title}">
-            <span>Barbie</span>
+          <div class="title">
+            <span>${title}</span>
 
             <div>
               <img src="./assets/icons/Star.svg" alt="" />
@@ -498,31 +500,34 @@ function select3Videos(results) {
 }
 
 function minutesToHourMinutesAndSeconds(minutes) {
- const date = new Date(null)
- date.setMinutes(minutes)
- return date.toISOString().slice(11, 19)
-  
+  const date = new Date(null)
+  date.setMinutes(minutes)
+  return date.toISOString().slice(11, 19)
+
 }
 async function start() {
   // puxar os filmes da api
   const results = data.results
   // pegar randomicamente 3 filmes para susgestão
-  const best3 = select3Videos(results)
-  // pegar informações extras dos 3 filmes
-  best3.forEach(async movie => {
+  const best3 = select3Videos(results).map(async movie => {
+    // pegar informações extras dos 3 filmes
     const info = await getMoreInfo(movie)
+    // organizar os dados para ...+
     const props = {
       id: info.id,
       title: info.title,
       stars: Number(info.vote_average).toFixed(1),
       image: info.poster_path,
       time: minutesToHourMinutesAndSeconds(info.runtime),
-      year: info.release_date
+      year: info.release_date.slice(0, 4)
     }
+
+    return createMovieLayout(props)
   })
-  // organizar os dados para ...+
   
+  const output = await Promise.all(best3)
+ 
   // substituir o conteúdo dos movies la do html
+  document.querySelector('.movies').innerHTML = output.join('')
 }
 
-start()
