@@ -8,8 +8,9 @@ async function getMovies() {
     }
   };
   try {
-    const data = await fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', options)
+    return fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', options)
       .then(response => response.json())
+
   } catch (error) {
     console.error(err)
   }
@@ -126,7 +127,7 @@ function minutesToHourMinutesAndSeconds(minutes) {
 }
 async function start() {
   // puxar os filmes da api
-  const results = data.results
+  const { results } = await getMovies()
   // pegar randomicamente 3 filmes para susgestão
   const best3 = select3Videos(results).map(async movie => {
     // pegar informações extras dos 3 filmes
